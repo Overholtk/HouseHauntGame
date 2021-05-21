@@ -35,10 +35,17 @@ public class mouseLook : MonoBehaviour
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-       if(Physics.Raycast(ray, out hit))
+       if(Physics.Raycast(ray, out hit) && hit.collider.GetComponent<Interactable>() != null)
         {
             Interactable interactible = hit.collider.GetComponent<Interactable>();
             Debug.Log(interactible.gameObject.name);
+
+            if (Vector3.Distance(playerBody.position, interactible.transform.position) <= interactible.radius)
+            {
+                Debug.Log("touch the sphere... owo");
+                //display UI to pick up and then check for key down to add to inventory
+            }
+
         }
         else
         {
