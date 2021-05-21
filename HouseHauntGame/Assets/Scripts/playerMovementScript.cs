@@ -47,34 +47,34 @@ public class playerMovementScript : MonoBehaviour
 
         controller.Move(velocity * Time.deltaTime);
 
-        if (Input.GetKeyDown("w") || Input.GetKeyDown("a") || Input.GetKeyDown("s") || Input.GetKeyDown("d"))
-        {
-            RemoveFocus();
-        }
+        //if (Input.GetKeyDown("w") || Input.GetKeyDown("a") || Input.GetKeyDown("s") || Input.GetKeyDown("d"))
+        //{
+        //    RemoveFocus();
+        //}
 
-        if (Input.GetMouseButtonDown(1))
-        {
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
+        //if (Input.GetMouseButtonDown(1))
+        //{
+        //    Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        //    RaycastHit hit;
 
-            if(Physics.Raycast(ray, out hit))
-            {
-                Interactable interactible = hit.collider.GetComponent<Interactable>();
-                if(interactible != null)
-                {
-                    SetFocus(interactible);
-                }
-            }
-        }
+        //    if(Physics.Raycast(ray, out hit))
+        //    {
+        //        Interactable interactible = hit.collider.GetComponent<Interactable>();
+        //        if(interactible != null)
+        //        {
+        //            SetFocus(interactible);
+        //        }
+        //    }
+        //}
     }
 
-    void SetFocus(Interactable newFocus)
-    {
-        focus = newFocus;
-    }
+    //void SetFocus(Interactable newFocus)
+    //{
+    //    focus = newFocus;
+    //}
 
-    void RemoveFocus()
-    {
-        focus = null;
-    }
+    //void RemoveFocus()
+    //{
+    //    focus = null;
+    //}
 }
