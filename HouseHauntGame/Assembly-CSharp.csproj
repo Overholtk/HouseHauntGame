@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Interactable.cs" />
+    <Compile Include="Assets\Scripts\Inventory.cs" />
     <Compile Include="Assets\Scripts\mouseLook.cs" />
     <Compile Include="Assets\Scripts\playerMovementScript.cs" />
     <Reference Include="UnityEngine">

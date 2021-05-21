@@ -47,9 +47,9 @@ public class mouseLook : MonoBehaviour
             }
 
         }
-        else
-        {
-            Debug.Log("nothing here");
-        }
+        //else
+        //{
+            //Debug.Log("nothing here");
+        //}
     }
 }

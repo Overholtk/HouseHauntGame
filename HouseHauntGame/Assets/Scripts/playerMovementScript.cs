@@ -9,6 +9,7 @@ public class playerMovementScript : MonoBehaviour
 
     Camera cam;
     public Interactable focus;
+    private Inventory inventory;
 
     public float speed = 12f;
     public float gravity = -9.81f;
@@ -20,6 +21,11 @@ public class playerMovementScript : MonoBehaviour
 
     Vector3 velocity;
     bool isGrounded;
+
+    private void Awake()
+    {
+        inventory = new Inventory();
+    }
 
     // Update is called once per frame
     void Update()
@@ -47,34 +53,6 @@ public class playerMovementScript : MonoBehaviour
 
         controller.Move(velocity * Time.deltaTime);
 
-        //if (Input.GetKeyDown("w") || Input.GetKeyDown("a") || Input.GetKeyDown("s") || Input.GetKeyDown("d"))
-        //{
-        //    RemoveFocus();
-        //}
-
-        //if (Input.GetMouseButtonDown(1))
-        //{
-        //    Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-        //    RaycastHit hit;
-
-        //    if(Physics.Raycast(ray, out hit))
-        //    {
-        //        Interactable interactible = hit.collider.GetComponent<Interactable>();
-        //        if(interactible != null)
-        //        {
-        //            SetFocus(interactible);
-        //        }
-        //    }
-        //}
     }
 
-    //void SetFocus(Interactable newFocus)
-    //{
-    //    focus = newFocus;
-    //}
-
-    //void RemoveFocus()
-    //{
-    //    focus = null;
-    //}
 }
