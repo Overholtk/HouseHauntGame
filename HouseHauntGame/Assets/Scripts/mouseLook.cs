@@ -11,10 +11,13 @@ public class mouseLook : MonoBehaviour
 
     float xRotation = 0f;
 
+    Camera cam;
+
     // Start is called before the first frame update
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        cam = Camera.main;
     }
 
     // Update is called once per frame
@@ -28,5 +31,18 @@ public class mouseLook : MonoBehaviour
 
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         playerBody.Rotate(Vector3.up * mouseX);
+
+        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+       if(Physics.Raycast(ray, out hit))
+        {
+            Interactable interactible = hit.collider.GetComponent<Interactable>();
+            Debug.Log(interactible.gameObject.name);
+        }
+        else
+        {
+            Debug.Log("nothing here");
+        }
     }
 }
